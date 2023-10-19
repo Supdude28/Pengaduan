@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Http\Middleware\ValidasiIn;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,10 +20,10 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('admin')->group(function(){
     Route::get('/',function(){
         return view('Administrator.index');
-    });
-    Route::get('login',function(){
-        return view('Administrator.Login');
-    });
+    })->middleware(ValidasiIn::class);
+    Route::get('login',[AdminController::class,'login']);
+    Route::post('login',[AdminController::class,'ceklogin']);
+    route::get('logout',[AdminController::class,'logout']);
 });
 
 // Route masyarakat

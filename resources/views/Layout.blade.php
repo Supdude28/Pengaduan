@@ -55,7 +55,7 @@
                     <span class="navbar-brand">@yield('title')</span>
                     <ul class="nav">
                         <li class="nav-item">
-                            <a href="#" class="btn btn-danger">
+                            <a href="/admin/logout" class="btn btn-danger">
                                 Sign Out
                                 <i class="bi bi-box-arrow-right"></i>
                             </a>
